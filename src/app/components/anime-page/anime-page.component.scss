@@ -1,6 +1,7 @@
 @use '../../../styles/variables' as *;
 @use '../../../styles/base' as *;
 
+// 🌐 Container principal
 .page-container {
   padding: $spacing-lg;
   background-color: $background-color;
@@ -8,6 +9,7 @@
   min-height: 100vh;
 }
 
+// 🏷️ Título principal
 .anime-title {
   font-size: 2.5rem;
   font-weight: $font-weight-bold;
@@ -16,6 +18,7 @@
   text-align: center;
 }
 
+// 🎴 Cartão de anime
 .anime-card {
   background-color: #f6f0f0;
   padding: $spacing-md;
@@ -41,7 +44,7 @@
   }
 }
 
-// 🎞️ Carrossel Responsivo
+// 🎞️ Carrossel de destaque
 .carousel-item-wrapper {
   width: 100%;
   max-height: 600px;
@@ -63,10 +66,78 @@
     border-radius: $border-radius;
     padding: $spacing-sm $spacing-md;
     text-align: center;
+    color: #fff;
+
+    h5 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #e0e0e0;
+      text-shadow: 1px 1px 2px #000;
+    }
   }
 }
 
-// telas pequenas
+// 🌐 Menu de Explorar
+.explore-menu {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 9999;
+  text-align: right;
+
+  .explore-button {
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  .explore-dropdown {
+    display: none;
+    flex-direction: column;
+    background-color: #222;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 5px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      margin: 4px 0;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: $primary-color;
+      }
+    }
+  }
+
+  // Abre dropdown ao passar o mouse
+  &:hover .explore-dropdown {
+    display: flex;
+  }
+}
+
+// 📱 Responsividade mobile
 @media (max-width: 768px) {
   .anime-title {
     font-size: 1.8rem;
@@ -78,6 +149,18 @@
 
     img {
       max-height: 300px;
+    }
+
+    .carousel-caption {
+      padding: $spacing-xs;
+
+      h5 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
     }
   }
 

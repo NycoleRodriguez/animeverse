@@ -1,4 +1,4 @@
-# 📘 AnimeVerse – Documentação Técnica
+# 📘 AnimeVerse 
 
 ## 📖 Sobre o Projeto
 O **AnimeVerse** é uma **Prova de Conceito (POC)** desenvolvida com **Angular** e **NG Bootstrap**, criada para fãs de animes que desejam uma experiência visual moderna, interativa e responsiva.  

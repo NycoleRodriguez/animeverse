@@ -3,14 +3,6 @@
 ## 📖 Sobre o Projeto
 O **AnimeVerse** é uma **Prova de Conceito (POC)** desenvolvida com **Angular** e **NG Bootstrap**, criada para fãs de animes que desejam uma experiência visual moderna, interativa e responsiva.  
 
-A aplicação apresenta:  
-- 🎠 **Carrossel** com animes em destaque  
-- 🗂️ **Listagem de cards** com informações básicas  
-- 🌐 **Menu “Explorar”** com links para plataformas de streaming  
-- 📱 Layout **100% responsivo**  
-
----
-
 ## ✨ Funcionalidades
 
 - 🎠 **Carrossel** de destaques (imagem + descrição)  

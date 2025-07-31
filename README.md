@@ -36,6 +36,7 @@ A aplicação apresenta:
 Clone o repositório:
 
 git clone https://github.com/NycoleRodriguez/animeverse.git
+
 cd animeverse
 
 Instale as dependências:

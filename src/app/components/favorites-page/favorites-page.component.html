@@ -1,0 +1,19 @@
+<div class="favorites-container">
+  <h1>❤️ Meus Favoritos</h1>
+
+  <div *ngIf="favorites.length === 0" class="empty-message">
+    Nenhum anime adicionado aos favoritos ainda.
+  </div>
+
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4" *ngIf="favorites.length > 0">
+    <div class="col" *ngFor="let anime of favorites">
+      <div class="anime-card h-100 text-center p-3">
+        <img [src]="anime.image" [alt]="anime.name" />
+        <div class="anime-name mt-2">{{ anime.name }}</div>
+        <button class="btn btn-danger mt-2" (click)="removeFavorite(anime)">
+          ❌ Remover dos Favoritos
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

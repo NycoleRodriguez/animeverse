@@ -1,0 +1,48 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/base' as *;
+
+.favorites-container {
+  padding: $spacing-lg;
+  background-color: $background-color;
+  color: $text-color;
+  min-height: 100vh;
+  text-align: center;
+
+  h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: $primary-color;
+    margin-bottom: $spacing-lg;
+  }
+
+  .empty-message {
+    font-size: 1.2rem;
+    color: #888;
+    margin-top: 20px;
+  }
+}
+
+.anime-card {
+  background-color: #f6f0f0;
+  padding: $spacing-md;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius;
+    margin-bottom: $spacing-sm;
+  }
+
+  .anime-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: $spacing-sm;
+  }
+}

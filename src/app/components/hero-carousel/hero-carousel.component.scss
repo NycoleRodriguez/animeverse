@@ -1,0 +1,63 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/base' as *;
+
+.carousel-item-wrapper {
+  width: 100%;
+  max-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: $border-radius;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+  }
+
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: $border-radius;
+    padding: $spacing-sm $spacing-md;
+    text-align: center;
+    color: #fff;
+
+    h5 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 1px 1px 3px #000;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #e0e0e0;
+      text-shadow: 1px 1px 2px #000;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item-wrapper {
+    max-height: 300px;
+
+    img {
+      max-height: 300px;
+    }
+
+    .carousel-caption {
+      padding: $spacing-xs;
+
+      h5 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

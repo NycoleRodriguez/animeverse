@@ -1,0 +1,11 @@
+<ngb-carousel class="mb-5 carousel-custom" [interval]="4000" [pauseOnHover]="true">
+  <ng-template ngbSlide *ngFor="let destaque of destaques">
+    <div class="carousel-item-wrapper">
+      <img [src]="destaque.image" class="d-block w-100 rounded" [alt]="destaque.title" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ destaque.title }}</h5>
+        <p>{{ destaque.description }}</p>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>

@@ -14,13 +14,12 @@ export class FavoritesPageComponent implements OnInit {
 
   constructor(private favoritesService: FavoritesService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.favorites = this.favoritesService.getFavorites();
   }
 
-  /** Remove um anime dos favoritos */
   removeFavorite(anime: any) {
     this.favoritesService.toggleFavorite(anime);
-    this.favorites = this.favoritesService.getFavorites(); // atualiza lista
+    this.favorites = this.favoritesService.getFavorites(); // Atualiza lista
   }
 }

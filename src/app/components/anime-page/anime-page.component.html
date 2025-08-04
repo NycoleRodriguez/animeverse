@@ -6,39 +6,37 @@
     <a href="https://www.netflix.com/br" target="_blank">Netflix</a>
     <a href="https://www.crunchyroll.com" target="_blank">Crunchyroll</a>
     <a href="https://www.primevideo.com" target="_blank">Prime Video</a>
+    <a routerLink="/favoritos">❤️ Meus Favoritos</a>
   </div>
 </nav>
 
 <div class="page-container">
   <h1 class="anime-title">Bem-vindo ao AnimeVerse</h1>
+  <app-hero-carousel [destaques]="destaques"></app-hero-carousel>
 
-  <section class="carousel-section">
-    <ngb-carousel class="mb-5 carousel-custom" [interval]="4000" [pauseOnHover]="true">
-      <ng-template ngbSlide *ngFor="let destaque of destaques">
-        <div class="carousel-item-wrapper">
-          <img [src]="destaque.image" class="d-block w-100 rounded" [alt]="destaque.title" />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>{{ destaque.title }}</h5>
-            <p>{{ destaque.description }}</p>
-          </div>
-        </div>
-      </ng-template>
-    </ngb-carousel>
-  </section>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let anime of animes">
+      <div class="anime-card h-100 text-center p-3">
+        <img [src]="anime.image" [alt]="anime.name" />
+        <div class="anime-name mt-2">{{ anime.name }}</div>
 
-  <section class="anime-grid">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
-      <div class="col" *ngFor="let anime of animes">
-        <div class="anime-card h-100 text-center p-3">
-          <img [src]="anime.image" [alt]="anime.name" />
-          <div class="anime-name mt-2">{{ anime.name }}</div>
-          <button class="btn btn-primary-custom mt-2" (click)="openDetails(detailsModal, anime)">
+        <div class="button-group mt-3 d-flex flex-column gap-2">
+          <button
+            class="btn btn-outline-danger"
+            (click)="toggleFavorite(anime)">
+            <span *ngIf="isFavorite(anime)">❤️ Favorito</span>
+            <span *ngIf="!isFavorite(anime)">🩶 Favoritar</span>
+          </button>
+
+          <button
+            class="btn btn-primary-custom"
+            (click)="openDetails(detailsModal, anime)">
             Ver Detalhes
           </button>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <ng-template #detailsModal let-modal>
     <div class="modal-header">
